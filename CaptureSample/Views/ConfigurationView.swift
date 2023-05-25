@@ -15,12 +15,15 @@ struct ConfigurationView: View {
     
     private let sectionSpacing: CGFloat = 20
     private let verticalLabelSpacing: CGFloat = 8
-    
     private let alignmentOffset: CGFloat = 10
     
-//    @StateObject private var audioPlayer = AudioPlayer()
     @ObservedObject var screenRecorder: ScreenRecorder
+    @ObservedObject var translator: NaverTranslator
+//    @State private var fromLanguageCode: String = "en"
+//    @State private var toLanguageCode: String = "ko"
     @Binding var userStopped: Bool
+
+
     
     var body: some View {
         VStack {
@@ -30,6 +33,26 @@ struct ConfigurationView: View {
                 
                 // A group that hides view labels.
                 Group {
+                    VStack {
+                        Text("Language Selection")
+                        HStack {
+                            Text("from")
+                            Picker("language", selection: $translator.fromLanguageCode) {
+                                            ForEach(translator.languageCodes, id: \.self) { code in
+                                                Text(code)
+                                            }
+                                        }
+                        }
+                        HStack {
+                            Text("to")
+                            Picker("language", selection: $translator.toLanguageCode) {
+                                ForEach(translator.languageCodes, id: \.self) { code in
+                                    Text(code)
+                                }
+                            }
+                        }
+                    }
+
                     VStack(alignment: .leading, spacing: verticalLabelSpacing) {
                         Text("Capture Type")
                         Picker("Capture", selection: $screenRecorder.captureType) {

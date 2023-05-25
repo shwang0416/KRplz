@@ -14,24 +14,23 @@ class NaverTranslator: ObservableObject {
     let CLIENT_ID = "v01qO4j91BMIvA1t6Lwf"
     let CLIENT_SECRET = "ALkMAS_jpY"
     let API_URL = "https://openapi.naver.com/v1/papago/n2mt"
-    let SOURCE = "ja"
-    let TARGET = "ko"
-//    private var translatedText = ""
     
-//    func getTranslatedText ()->String {
-//        return translatedText
-//    }
-//
-//    func updateTranslatedText (text:String) {
-//        translatedText = text
-//    }
+    @Published var fromLanguageCode: String = "en"
+    @Published var toLanguageCode: String = "ko"
+    @Published var languageCodes = [
+        "en",
+        "ko",
+        "ja",
+        "zh-CN",
+        "zh-TW"
+    ]
     
     func translateText(original_texts:String, completion: @escaping (String?) -> Void) {
         let apiUrl = URL(string: API_URL)!
         let query = original_texts
         let clientId = CLIENT_ID
         let clientSecret = CLIENT_SECRET
-        var translatedText = ""
+
         
         var request = URLRequest(url: apiUrl)
         request.httpMethod = "POST"
@@ -41,7 +40,7 @@ class NaverTranslator: ObservableObject {
         
 
 //            request.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
-            let bodyString = "source=\(SOURCE)&target=\(TARGET)&text=\(query)"
+            let bodyString = "source=\(fromLanguageCode)&target=\(toLanguageCode)&text=\(query)"
             request.httpBody = bodyString.data(using: .utf8)
             
 
