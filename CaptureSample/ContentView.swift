@@ -225,14 +225,23 @@ struct ContentView: View {
                             Text("off")
                         }
                     }
-
-                    Button {
-                        Task {
-                            showConfigMenu = !showConfigMenu
+                    HStack {
+                        Button {
+                            Task {
+                                showConfigMenu = !showConfigMenu
+                            }
+                        } label: {
+                            Text("Window Config")
                         }
-                    } label: {
-                        Text("Toggle Window Config")
+//                        Button {
+//                            Task {
+//                                
+//                            }
+//                        } label: {
+//                            Text("Copy Texts")
+//                        }
                     }
+ 
 
 //                    .padding()
 
@@ -336,6 +345,8 @@ struct ContentView: View {
 //        .navigationTitle("Screen Capture Sample")
         .onAppear {
             Task {
+                
+                translator.getKeysFromFile()
                 addObserver()
                 if await screenRecorder.canRecord {
 //                    await screenRecorder.start()
