@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		391A0171128AB2623B28CFF7 /* Pods_CaptureSample_CaptureSampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871CAB3E8C757C8EC3A2936B /* Pods_CaptureSample_CaptureSampleUITests.framework */; };
 		AA682DAF2A1FA9E2009B2F08 /* Pods_CaptureSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEEC010633D4683A12DF681E /* Pods_CaptureSample.framework */; };
+		AA6892302A35DE92006E5922 /* DeepLTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA68922F2A35DE92006E5922 /* DeepLTranslator.swift */; };
 		AAF994842A1FA14E008A2A22 /* CaptureSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF994832A1FA14E008A2A22 /* CaptureSampleApp.swift */; };
 		AAF994862A1FA14E008A2A22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF994852A1FA14E008A2A22 /* ContentView.swift */; };
 		AAF994882A1FA14F008A2A22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAF994872A1FA14F008A2A22 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		7F8356CADB75B04661B4DF4B /* Pods-CaptureSample-CaptureSampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaptureSample-CaptureSampleUITests.debug.xcconfig"; path = "Target Support Files/Pods-CaptureSample-CaptureSampleUITests/Pods-CaptureSample-CaptureSampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		871CAB3E8C757C8EC3A2936B /* Pods_CaptureSample_CaptureSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaptureSample_CaptureSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AE439E0AF1CC9B632C5594C /* Pods-CaptureSampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaptureSampleTests.debug.xcconfig"; path = "Target Support Files/Pods-CaptureSampleTests/Pods-CaptureSampleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AA68922F2A35DE92006E5922 /* DeepLTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLTranslator.swift; sourceTree = "<group>"; };
 		AAF994802A1FA14E008A2A22 /* CaptureSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaptureSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF994832A1FA14E008A2A22 /* CaptureSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSampleApp.swift; sourceTree = "<group>"; };
 		AAF994852A1FA14E008A2A22 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				AAF994872A1FA14F008A2A22 /* Assets.xcassets */,
 				AAF9948C2A1FA14F008A2A22 /* CaptureSample.entitlements */,
 				AAF994892A1FA14F008A2A22 /* Preview Content */,
+				AA68922F2A35DE92006E5922 /* DeepLTranslator.swift */,
 			);
 			path = CaptureSample;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				AAF994862A1FA14E008A2A22 /* ContentView.swift in Sources */,
 				AAF994842A1FA14E008A2A22 /* CaptureSampleApp.swift in Sources */,
 				AAF994BE2A1FA335008A2A22 /* CaptureEngine.swift in Sources */,
+				AA6892302A35DE92006E5922 /* DeepLTranslator.swift in Sources */,
 				AAF994BC2A1FA297008A2A22 /* ConfigurationView.swift in Sources */,
 				AAF994B32A1FA1C2008A2A22 /* NaverTranslator.swift in Sources */,
 				AAF994B12A1FA1A9008A2A22 /* ScreenRecorder.swift in Sources */,

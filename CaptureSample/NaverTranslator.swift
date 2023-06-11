@@ -21,7 +21,7 @@ class NaverTranslator: ObservableObject {
     private var privateKeys:[Private] = []
     private var currentPrivateIndex = 0
 
-    @Published var fromLanguageCode: String = "en"
+    @Published var fromLanguageCode: String = "jp"
     @Published var toLanguageCode: String = "ko"
     @Published var languageCodes = [
         "en",
@@ -96,7 +96,7 @@ class NaverTranslator: ObservableObject {
             let bodyString = "source=\(fromLanguageCode)&target=\(toLanguageCode)&text=\(query)"
             request.httpBody = bodyString.data(using: .utf8)
             
-
+            print(request)
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 if let error = error {
                     print("Error: \(error)")

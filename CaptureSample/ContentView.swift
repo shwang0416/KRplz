@@ -1,8 +1,7 @@
 /*
 See LICENSE folder for this sample’s licensing information.
 
-Abstract:
-The app's main view.
+Abstract:The app's main view.
 */
 
 import SwiftUI
@@ -27,7 +26,8 @@ struct ContentView: View {
 //    @State private var isTextUpdated = false
 //    @State private var isLoading = true
     @ObservedObject var screenRecorder = ScreenRecorder()
-    @StateObject var translator = NaverTranslator()
+    @StateObject var translator = DeepLTranslator()
+//    @StateObject var translator = NaverTranslator()
     @State var showConfigMenu = false
     @State var showTranslatedView = false
     @State var shouldStopTimer = true
@@ -67,15 +67,15 @@ struct ContentView: View {
     //               여기서 prevRecogizedText 와 recogizedText diff로 비교해서 얼마나 다른지 보기
                     recognizedTextString = recognizedTexts.reduce("", { $0.isEmpty ? $1 : $0 + " " + $1 })
                     let diff = prevRecognizedTextString.diff(recognizedTextString)
-                    print("---------------------------")
-                    print("prev",prevRecognizedTextString)
-                    print("cur",recognizedTextString)
-                    print("diff: ",diff.count)
+//                    print("---------------------------")
+//                    print("prev",prevRecognizedTextString)
+//                    print("cur",recognizedTextString)
+//                    print("diff: ",diff.count)
                     if (diff.count > 3 && showTranslatedView) {
-                        print("텍스트가 바뀜")
+//                        print("텍스트가 바뀜")
                         translateTexts()
                     }
-                    print("---------------------------")
+//                    print("---------------------------")
                     prevRecognizedTextString = recognizedTextString
                     
                 }
@@ -144,9 +144,9 @@ struct ContentView: View {
         VStack(alignment: .leading) {
             HSplitView {
                 if (showConfigMenu) {
-                    ConfigurationView(screenRecorder: screenRecorder, translator: translator, userStopped: $userStopped)
-                        .frame(minWidth: 0, maxWidth: 280)
-                        .disabled(disableInput)
+//                    ConfigurationView(screenRecorder: screenRecorder, translator: translator, userStopped: $userStopped)
+//                        .frame(minWidth: 0, maxWidth: 280)
+//                        .disabled(disableInput)
                 }
                 VStack {
                     HStack {
@@ -346,7 +346,7 @@ struct ContentView: View {
         .onAppear {
             Task {
                 
-                translator.getKeysFromFile()
+//                translator.getKeysFromFile()
                 addObserver()
                 if await screenRecorder.canRecord {
 //                    await screenRecorder.start()
