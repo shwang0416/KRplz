@@ -26,8 +26,8 @@ struct ContentView: View {
 //    @State private var isTextUpdated = false
 //    @State private var isLoading = true
     @ObservedObject var screenRecorder = ScreenRecorder()
-    @StateObject var translator = DeepLTranslator()
-//    @StateObject var translator = NaverTranslator()
+//    @StateObject var translator = DeepLTranslator()
+    @StateObject var translator = NaverTranslator()
     @State var showConfigMenu = false
     @State var showTranslatedView = false
     @State var shouldStopTimer = true
@@ -144,9 +144,9 @@ struct ContentView: View {
         VStack(alignment: .leading) {
             HSplitView {
                 if (showConfigMenu) {
-//                    ConfigurationView(screenRecorder: screenRecorder, translator: translator, userStopped: $userStopped)
-//                        .frame(minWidth: 0, maxWidth: 280)
-//                        .disabled(disableInput)
+                    ConfigurationView(screenRecorder: screenRecorder, translator: translator, userStopped: $userStopped)
+                        .frame(minWidth: 0, maxWidth: 280)
+                        .disabled(disableInput)
                 }
                 VStack {
                     HStack {
@@ -346,7 +346,7 @@ struct ContentView: View {
         .onAppear {
             Task {
                 
-//                translator.getKeysFromFile()
+                translator.getKeysFromFile()
                 addObserver()
                 if await screenRecorder.canRecord {
 //                    await screenRecorder.start()
