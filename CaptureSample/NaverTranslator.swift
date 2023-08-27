@@ -21,7 +21,7 @@ class NaverTranslator: ObservableObject {
     private var privateKeys:[Private] = []
     private var currentPrivateIndex = 0
 
-    @Published var fromLanguageCode: String = "jp"
+    @Published var fromLanguageCode: String = "ja"
     @Published var toLanguageCode: String = "ko"
     @Published var languageCodes = [
         "en",
@@ -90,13 +90,11 @@ class NaverTranslator: ObservableObject {
         request.addValue(clientId, forHTTPHeaderField: "X-Naver-Client-Id")
         request.addValue(clientSecret, forHTTPHeaderField: "X-Naver-Client-Secret")
         request.addValue("application/x-www-form-urlencoded; charset=UTF-8", forHTTPHeaderField: "Content-Type")
-        
 
 //            request.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
             let bodyString = "source=\(fromLanguageCode)&target=\(toLanguageCode)&text=\(query)"
             request.httpBody = bodyString.data(using: .utf8)
             
-            print(request)
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 if let error = error {
                     print("Error: \(error)")
